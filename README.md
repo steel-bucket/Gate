@@ -6,6 +6,11 @@ A Gate Entry app.
 
 * Python: 3.9 and above
 
+## Technologies Used
+* DJango 4.26 as MVC Backend
+* DJangoRestFramework as API
+* PostgreSQL and railway.app as DB
+
 ## How to run it?
 
 * Fork the repository.
