@@ -1,0 +1,15 @@
+<!-- templates/guestformapi/guest_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Form</title>
+</head>
+<body>
+    <h2>Guest Form</h2>
+    <form method="post" action="{% url 'guestformapi:guest_form' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

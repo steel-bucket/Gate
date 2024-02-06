@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,
+				initial-scale=1,
+				shrink-to-fit=no">
+    <title>
+        load data from json file
+        into a bootstrap table
+    </title>
+
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet"
+          href=
+                  "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Include the Bootstrap Table CSS
+    for the table -->
+    <link rel="stylesheet"
+          href=
+                  "https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text text-success text-center ">
+        Records
+    </h1>
+    <h6 class="text text-success text-center">
+        Records Portal
+    </h6>
+    <table class="table-striped border-success">
+        <thead>
+        <tr>
+            <th data-field="id">
+			<span class="text-success">
+				ID
+			</span>
+            </th>
+            <th data-field="name">
+			<span class="text-success">
+				Name
+			</span>
+            </th>
+            <th data-field="time">
+			<span class="text-success">
+				Time
+			</span>
+            </th>
+            <th data-field="entering">
+			<span class="text-success">
+				Entering
+			</span>
+            </th>
+            <th data-field="roll_id">
+			<span class="text-success">
+				Roll/ID
+			</span>
+            </th>
+            <th data-field="address">
+			<span class="text-success">
+				Address
+			</span>
+            </th>
+            <th data-field="purpose">
+			<span class="text-success">
+				Purpose
+			</span>
+            </th>
+            <th data-field="notes">
+			<span class="text-success">
+				Notes
+			</span>
+            </th>
+            <th data-field="contact">
+			<span class="text-success">
+				Contact
+			</span>
+            </th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<!-- Include jQuery and other required
+files for Bootstrap -->
+<script src=
+                "https://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script src=
+                "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+</script>
+<script src=
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script>
+
+<!-- Include the JavaScript file
+for Bootstrap table -->
+<script src=
+                "https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js">
+</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Use AJAX to fetch JSON data from the API endpoint
+        $.ajax({
+            url: '/api/api/records/?format=json',
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Assign the fetched data to the mydata variable
+                const mydata = data;
+
+                // Use the given data to create the table and display it
+                $('table').bootstrapTable({
+                    data: mydata
+                });
+            },
+            error: function (error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
