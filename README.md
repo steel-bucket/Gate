@@ -11,7 +11,7 @@ A Gate Entry app.
 * DJangoRestFramework as API
 * PostgreSQL and railway.app as DB
 
-## How to run it?
+## How to run server and Set Up a Dev Enviornment?
 
 * Fork the repository.
 * Setup Virtual Environment: $ python3 -m venv gate4_venv
@@ -37,4 +37,3 @@ A Gate Entry app.
     - `hotfix/*` if you've fixed a bug that is deployed and/or causing problems in Production.
     - Note: DON'T push to `master` or `release` branch.
 * Use an IDE linter, like **SonarLint**, to fix common bugs/code quality issues.
-* Update your task's status in the provided spreadsheet.
